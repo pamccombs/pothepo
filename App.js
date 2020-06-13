@@ -1,10 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
+
+import Login from './src/screens/Login.js'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar
+        backgroundColor='grey'
+        barStyle='light-content'
+      />
+      <Text style={styles.text}>Open up App.js to start working on your app!</Text>
     </View>
   );
 }
@@ -12,8 +18,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#455a64',
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  text: {
+    color: '#ffffff',
+    fontSize: 18
+  }
 });
