@@ -1,19 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
 
-import Login from './src/screens/Login'
-import Signup from './src/screens/Signup'
+import Routes from './src/Routes'
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar
-        backgroundColor='grey'
-        barStyle='light-content'
-      />
-      <Signup/>
-      {/* <Login/> */}
-    </View>
+    <Routes/>
   );
 }
 

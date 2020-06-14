@@ -6,15 +6,31 @@ export default class Form extends Component {
         return (
             <View style={styles.container}>
                 <TextInput style={styles.inputBox}
+                    // underlineColorAndroid='rgba(0,0,0,0)'
                     placeholder="Email"
                     placeholderTextColor="#ffffff"
+                    selectionColor="#ffffff"
+                    keyboardType="email-address"
+                    onSubmitEditing={() => this.password.focus()}
                 />
 
                 <TextInput style={styles.inputBox}
                     placeholder="Password"
                     secureTextEntry={true}
                     placeholderTextColor="#ffffff"
+                    ref={(input) => this.password = input}
+                    // onSubmitEditing={() => this.passwordConfirm.focus()}
                 />
+
+                {this.props.type == "Signup" &&
+
+                    <TextInput style={styles.inputBox}
+                        placeholder="Password Confirmation"
+                        secureTextEntry={true}
+                        placeholderTextColor="#ffffff"
+                        // ref={(input) => this.passwordConfirm = input}
+                    />
+                }
 
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText}>{this.props.type}</Text>

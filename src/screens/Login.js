@@ -3,15 +3,20 @@ import { StyleSheet, Text, View, StatusBar } from 'react-native';
 
 import Logo from '../components/Logo'
 import Form from '../components/Form'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
+      <StatusBar
+        backgroundColor='grey'
+        barStyle='light-content'
+      />
       <Logo />
-      <Form type="Login"/>
+      <Form type="Login" />
       <View style={styles.signupTextCont}>
         <Text style={styles.signupText}>Don't have an account yet?</Text>
-        <Text style={styles.signupButton}> Signup!</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('Signup')}><Text style={styles.signupButton}> Signup!</Text></TouchableOpacity>
       </View>
     </View>
   );
